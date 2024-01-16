@@ -22,7 +22,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 
 # build overlay source
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
-	&& colcon build
+	&& colcon build --event-handlers console_direct+
 
 # source overlay from entrypoint
 RUN sed --in-place \
