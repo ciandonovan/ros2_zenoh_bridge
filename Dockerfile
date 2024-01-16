@@ -5,10 +5,10 @@ ARG OVERLAY_WS=/opt/ros/overlay_ws
 ENV OVERLAY_WS $OVERLAY_WS
 
 # install base packages
-#RUN apt-get update && apt-get install -y \
-#	tini \
-#	ros-$ROS_DISTRO-rmw-cyclonedds-cpp \
-#	&& rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+	tini \
+	ros-$ROS_DISTRO-rmw-cyclonedds-cpp \
+	&& rm -rf /var/lib/apt/lists/*
 
 # copy overlay source
 WORKDIR $OVERLAY_WS
